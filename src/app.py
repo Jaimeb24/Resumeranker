@@ -22,13 +22,13 @@ def create_app(config_name=None):
     CORS(app, origins=app.config['CORS_ORIGINS'])
     
     # Initialize database
-    init_db(app)
+    init_db(app)git 
     
     # Register blueprints
     app.register_blueprint(api_bp)
     
     # Initialize SocketIO
-    socketio = SocketIO(app, cors_allowed_origins=app.config['CORS_ORIGINS'], async_mode='eventlet')
+    socketio = SocketIO(app, cors_allowed_origins=app.config['CORS_ORIGINS'], async_mode='threading')
     app.extensions['socketio'] = socketio
     
     # SocketIO event handlers
