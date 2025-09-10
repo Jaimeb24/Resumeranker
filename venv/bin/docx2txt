@@ -1,4 +1,4 @@
-#!/workspaces/Resumeranker/venv/bin/python
+#!/workspaces/Resumeranker/venv/bin/python3
 
 import docx2txt
 
