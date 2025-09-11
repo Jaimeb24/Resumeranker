@@ -28,7 +28,7 @@ def create_app(config_name=None):
     app.register_blueprint(api_bp)
     
     # Initialize SocketIO
-    socketio = SocketIO(app, cors_allowed_origins=app.config['CORS_ORIGINS'], async_mode='eventlet')
+    socketio = SocketIO(app, cors_allowed_origins=app.config['CORS_ORIGINS'], async_mode='threading')
     app.extensions['socketio'] = socketio
     
     # SocketIO event handlers
